@@ -1,5 +1,6 @@
 import Foundation
 import Capacitor
+import FluvioClientSwift
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -7,12 +8,12 @@ import Capacitor
  */
 @objc(FluvioPlugin)
 public class FluvioPlugin: CAPPlugin {
-    private let implementation = Fluvio()
 
-    @objc func echo(_ call: CAPPluginCall) {
+    @objc func connect(_ call: CAPPluginCall) {
+         let client = Fluvio("asd");
         let value = call.getString("value") ?? ""
         call.resolve([
-            "value": implementation.echo(value)
+            "value": "asd"
         ])
     }
 }

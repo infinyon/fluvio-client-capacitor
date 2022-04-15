@@ -1,3 +1,3 @@
 export interface FluvioPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  connect(options: { value: string }): Promise<{ value: string }>;
 }

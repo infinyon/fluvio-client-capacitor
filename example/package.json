@@ -1,24 +1,26 @@
 {
-  "name": "capacitor-app",
+  "name": "fluvio-client-capacitor-example",
   "version": "1.0.0",
-  "description": "An Amazing Capacitor App",
+  "description": "Capacitor Fluvio Client Example",
   "main": "index.js",
   "keywords": [
     "capacitor",
     "mobile"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@capacitor/core": "latest",
-    "@capacitor/camera": "latest",
-    "@capacitor/splash-screen": "latest",
-    "fluvio-client-capacitor": "file:.."
+    "@capacitor/ios": "^3.4.3",
+    "@fluvio/client-capacitor": "file:.."
   },
   "devDependencies": {
-    "@capacitor/cli": "latest"
+    "@capacitor/cli": "latest",
+    "vite": "^2.9.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "Apache-2.0"
 }

@@ -1,0 +1,27 @@
+{
+  "name": "fluvio-client-capacitor-example",
+  "version": "1.0.0",
+  "description": "Capacitor Fluvio Client Example",
+  "main": "index.js",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "private":"true",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "^3.4.3",
+    "@fluvio/client-capacitor": "file:.."
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "vite": "^2.9.3"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}

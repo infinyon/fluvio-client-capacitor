@@ -1,0 +1,27 @@
+name: CI
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run eslint
+      - run: npm run prettier
+      - run: npm run verify:web
+      - run: npm run verify:ios

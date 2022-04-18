@@ -1,5 +1,5 @@
 {
-  "name": "fluvio-client-capacitor",
+  "name": "@fluvio/client-capacitor",
   "version": "0.0.1",
   "description": "Fluvio Client",
   "main": "dist/plugin.cjs.js",

@@ -1,0 +1,1 @@
+{"version":3,"file":"definitions.js","sourceRoot":"","sources":["../../src/definitions.ts"],"names":[],"mappings":"","sourcesContent":["export interface FluvioPlugin {\n  connect(options: { value: string }): Promise<{ value: string }>;\n  produce(options: { value: string }): Promise<{ value: string }>;\n}\n"]}

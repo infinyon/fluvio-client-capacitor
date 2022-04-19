@@ -1,7 +1,7 @@
 {
   "name": "@fluvio/client-capacitor",
   "version": "0.0.1",
-  "description": "Fluvio Client",
+  "description": "Fluvio Client for Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -13,14 +13,14 @@
     "ios/Plugin/",
     "FluvioClientCapacitor.podspec"
   ],
-  "author": "Team <team@fluvio.io>",
+  "author": "Fluvio Contributors <team@fluvio.io>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/infinyon/fluvio-client-swift.git"
+    "url": "git+https://github.com/infinyon/fluvio-client-capacitor.git"
   },
   "bugs": {
-    "url": "https://github.com/infinyon/fluvio-client-swift/issues"
+    "url": "https://github.com/infinyon/fluvio-client-capacitor/issues"
   },
   "keywords": [
     "capacitor",

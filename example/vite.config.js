@@ -1,3 +1,3 @@
 export default {
-    root: 'www'
-}
+  root: 'www',
+};

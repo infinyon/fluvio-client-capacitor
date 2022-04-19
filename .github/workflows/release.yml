@@ -1,0 +1,30 @@
+name: Release
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: true
+
+jobs:
+  build:
+    name: Release
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - name: NPM pack
+        run: |
+        pack_file=$(npm pack)
+        mv $pack_file fluvio-client-capacitor.tgz
+      - name: Create GH release
+        run: gh release create ${{ github.event.inputs.tag }} -d --generate-notes
+      - name: Upload NPM pack file to GH release
+        run: gh release upload ${{ github.event.inputs.tag }} fluvio-client-capacitor.tgz

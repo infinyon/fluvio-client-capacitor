@@ -1,6 +1,7 @@
 # node files
 dist
 node_modules
+fluvio-client-capacitor-*.tgz
 
 # iOS files
 Pods

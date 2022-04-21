@@ -14,9 +14,10 @@ on:
         required: true
 
 jobs:
-  build:
-    name: Release
-    runs-on: macos-latest
+  release:
+    name: GH NPM Release
+    permissions: write-all
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm ci

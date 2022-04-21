@@ -6,7 +6,7 @@ use_frameworks!
 # Requires CocoaPods 1.6 or newer
 install! 'cocoapods', :disable_input_output_paths => true
 
-source 'git@github.com:infinyon/CocoaPods.git'
+source 'git@github.com:infinyon/CocoaPodSpecs.git'
 
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'

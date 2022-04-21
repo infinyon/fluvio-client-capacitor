@@ -9,8 +9,8 @@ import FluvioClientSwift
 @objc(FluvioPlugin)
 public class FluvioPlugin: CAPPlugin {
 
-    var clients = [Int : Fluvio]();
-    var producers = [String : TopicProducer]();
+    var clients = [Int: Fluvio]()
+    var producers = [String: TopicProducer]()
 
     @objc func connect(_ call: CAPPluginCall) {
         let endpoint = call.getString("endpoint")!
@@ -19,10 +19,9 @@ public class FluvioPlugin: CAPPlugin {
         let cert = call.getString("cert")!
         let ca_cert = call.getString("ca_cert")!
         let nextClientId = clients.count
-    
-        
+
         let profile = FluvioProfile(endpoint, domain, key, cert, ca_cert)
-        self.clients[nextClientId] = profile.connect();
+        self.clients[nextClientId] = profile.connect()
         call.resolve([
             "clientId": nextClientId
         ])
@@ -35,15 +34,14 @@ public class FluvioPlugin: CAPPlugin {
         let key = call.getString("key") ?? ""
 
         var producer = self.producers[topic] ?? self.clients[clientId]?.topic_producer(topic)
-        
-        
+
         var value_raw_bytes_array = Array(value.utf8)
         var key_raw_bytes_array = Array(key.utf8)
-        let value_bytes = UnsafeBufferPointer(start:&value_raw_bytes_array, count: value_raw_bytes_array.count)
-        let key_bytes =  UnsafeBufferPointer(start:&key_raw_bytes_array, count: key_raw_bytes_array.count)
+        let value_bytes = UnsafeBufferPointer(start: &value_raw_bytes_array, count: value_raw_bytes_array.count)
+        let key_bytes =  UnsafeBufferPointer(start: &key_raw_bytes_array, count: key_raw_bytes_array.count)
 
         producer?.send(key_bytes, value_bytes)
-        
+
         producer?.flush()
 
         call.resolve([

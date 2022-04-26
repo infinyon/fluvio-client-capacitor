@@ -25,6 +25,8 @@ jobs:
         run: |
           pack_file=$(npm pack)
           mv $pack_file fluvio-client-capacitor.tgz
+      - name: Login GH CLI
+        run: gh auth login --with-token < <(echo ${{ secrets.GITHUB_TOKEN }})
       - name: Create GH release
         run: gh release create ${{ github.event.inputs.tag }} -d --generate-notes
       - name: Upload NPM pack file to GH release

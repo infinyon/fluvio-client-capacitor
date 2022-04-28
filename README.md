@@ -45,80 +45,29 @@ See [Example](example/www/main.js)
 
 ## API
 
-<docgen-index>
+### FluvioClient
 
-* [`connect(...)`](#connect)
-* [`produce(...)`](#produce)
-* [Interfaces](#interfaces)
+#### Methods
 
-</docgen-index>
+- `Static` **connect**(`profile`: [Profile](#Profile)): `Promise`<[`FluvioClient`](#FluvioClient)\>
 
-<docgen-api>
-<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-### connect(...)
-
-```typescript
-connect(profile: Profile) => Promise<Client>
-```
-
-| Param         | Type                                        |
-| ------------- | ------------------------------------------- |
-| **`profile`** | <code><a href="#profile">Profile</a></code> |
-
-**Returns:** <code>Promise&lt;<a href="#client">Client</a>&gt;</code>
-
---------------------
+- **produce**(`topic`: `String`, `value`: `String`): `Promise`<`void`\>
 
 
-### produce(...)
+### FluvioProfile
 
-```typescript
-produce(options: ProduceOpts) => Promise<void>
-```
+#### Properties
 
-| Param         | Type                                                |
-| ------------- | --------------------------------------------------- |
-| **`options`** | <code><a href="#produceopts">ProduceOpts</a></code> |
-
---------------------
+- endpoint: `string`
+- tls: [`FluvioProfileTls`](#FluvioProfileTls)
 
 
-### Interfaces
+### FluvioProfileTls
 
+#### Properties
 
-#### Client
-
-| Prop           | Type                |
-| -------------- | ------------------- |
-| **`clientId`** | <code>number</code> |
-
-
-#### Profile
-
-| Prop           | Type                                              |
-| -------------- | ------------------------------------------------- |
-| **`endpoint`** | <code>string</code>                               |
-| **`tls`**      | <code><a href="#profiletls">ProfileTls</a></code> |
-
-
-#### ProfileTls
-
-| Prop          | Type                |
-| ------------- | ------------------- |
-| **`policy`**  | <code>string</code> |
-| **`domain`**  | <code>string</code> |
-| **`key`**     | <code>string</code> |
-| **`cert`**    | <code>string</code> |
-| **`ca_cert`** | <code>string</code> |
-
-
-#### ProduceOpts
-
-| Prop           | Type                |
-| -------------- | ------------------- |
-| **`clientId`** | <code>number</code> |
-| **`topic`**    | <code>string</code> |
-| **`value`**    | <code>string</code> |
-
-</docgen-api>
+- policy: `string`
+- domain: `string`
+- key: `string`
+- cert: `string`
+- ca_cert: `string`

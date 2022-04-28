@@ -1,4 +1,4 @@
-import { Fluvio } from '@fluvio/client-capacitor';
+import { FluvioClient } from '@fluvio/client-capacitor';
 
 // Created from `fluvio profile export > fluvio-profile.json`
 import fluvioProfile from './fluvio-profile.json';
@@ -7,7 +7,7 @@ const FLUVIO_TOPIC = 'cap-example';
 
 let fluvioClient;
 
-Fluvio.connect(fluvioProfile).then(
+FluvioClient.connect(fluvioProfile).then(
   client => {
     console.info(`Connected to Fluvio: ${JSON.stringify(client)}`);
     fluvioClient = client;

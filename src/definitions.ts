@@ -17,7 +17,7 @@ export interface ProfileTls {
 }
 
 export interface Client {
-  clientId: number
+  clientId: number;
 }
 
 export interface ProduceOpts {

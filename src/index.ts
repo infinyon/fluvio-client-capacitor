@@ -5,9 +5,9 @@ import type { FluvioPlugin, Profile as FluvioProfile } from './definitions';
 const fluvioNative = registerPlugin<FluvioPlugin>('Fluvio');
 
 class Fluvio {
-  static async connect(profile: FluvioProfile) : Promise<FluvioClient> {
-    let { clientId } = await fluvioNative.connect(profile);
-    return new FluvioClient(clientId)
+  static async connect(profile: FluvioProfile): Promise<FluvioClient> {
+    const { clientId } = await fluvioNative.connect(profile);
+    return new FluvioClient(clientId);
   }
 }
 
@@ -21,8 +21,8 @@ class FluvioClient {
     return await fluvioNative.produce({
       clientId: this.id,
       topic,
-      value
-    })
+      value,
+    });
   }
 }
 

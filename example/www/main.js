@@ -3,7 +3,7 @@ import { Fluvio } from '@fluvio/client-capacitor';
 // Created from `fluvio profile export > fluvio-profile.json`
 import fluvioProfile from './fluvio-profile.json';
 
-const FLUVIO_TOPIC = "cap-example";
+const FLUVIO_TOPIC = 'cap-example';
 
 let fluvioClient;
 
@@ -19,16 +19,16 @@ Fluvio.connect(fluvioProfile).then(
 
 let produceForm = document.querySelector('form');
 
-produceForm.addEventListener("submit", (event) => {
+produceForm.addEventListener('submit', event => {
   event.preventDefault();
   if (!fluvioClient) {
-    console.error("Not connected to Fluvio");
+    console.error('Not connected to Fluvio');
     return;
   }
 
   let formData = new FormData(produceForm);
 
-  let produceValue = formData.get("produceValue");
+  let produceValue = formData.get('produceValue');
 
   fluvioClient.produce(FLUVIO_TOPIC, produceValue).then(
     _ => {

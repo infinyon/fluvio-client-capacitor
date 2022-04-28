@@ -14,10 +14,11 @@ public class FluvioPlugin: CAPPlugin {
 
     @objc func connect(_ call: CAPPluginCall) {
         let endpoint = call.getString("endpoint")!
-        let domain = call.getString("domain")!
-        let key = call.getString("key")!
-        let cert = call.getString("cert")!
-        let ca_cert = call.getString("ca_cert")!
+        let tls = call.getObject("tls")!
+        let domain = tls["domain"]! as! String
+        let key = tls["key"]! as! String
+        let cert = tls["cert"]! as! String
+        let ca_cert = tls["ca_cert"]! as! String
         let nextClientId = clients.count
 
         let profile = FluvioProfile(endpoint, domain, key, cert, ca_cert)
@@ -44,8 +45,6 @@ public class FluvioPlugin: CAPPlugin {
 
         producer?.flush()
 
-        call.resolve([
-            "value": "success"
-        ])
+        call.resolve()
     }
 }

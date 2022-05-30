@@ -1,7 +1,6 @@
 <h1 align="center">Fluvio Capacitor Plugin</h1>
-<p align="center">Fluvio client for Capacitor Apps</p>
 
-This project is a mobile app plug-in written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobiles devices with Fluvio. Connecting and producing data directly to Fluvio lowers latency and reduces load on other backend services. 
+This project is a mobile app plug-in written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobiles devices with Fluvio. Producing and consuming data directly to and from Fluvio lowers latency and reduces load on other backend services. 
 
 Using this plugin allows your app to connect directly to a Fluvio cluster without the need for a backend. Under the hood this uses [fluvio-client-swift](https://github.com/infinyon/fluvio-client-swift/) for iOS.
 

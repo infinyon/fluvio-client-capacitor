@@ -1,15 +1,24 @@
 <h1 align="center">Fluvio Capacitor Plugin</h1>
 <p align="center">Fluvio client for Capacitor Apps</p>
 
-## What is Fluvio?
-
-[Fluvio](https://www.fluvio.io/) is a high-performance distributed data streaming platform built to make it easy to run real-time applications.
-
-## Who should use this
-
-This plugin is for use with mobile apps written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com). Connecting and producing data directly to Fluvio lowers latency and reduces load on other backend services. This is ideal for high thoughput, real-time applications.
+This project is a mobile app plug-in written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobiles devices with Fluvio. Connecting and producing data directly to Fluvio lowers latency and reduces load on other backend services. 
 
 Using this plugin allows your app to connect directly to a Fluvio cluster without the need for a backend. Under the hood this uses [fluvio-client-swift](https://github.com/infinyon/fluvio-client-swift/) for iOS.
+
+## What is Fluvio?
+
+[Fluvio](https://www.fluvio.io/) is a high-performance distributed data streaming platform built to make it easy to build and run real-time applications. With Fluvio, you can ingest, transform, and dispatch large volumes of events between from your mobile devices to backend servers. 
+
+## Who should use this?
+
+Anyone building a native mobile applications with low tolerance for latency. For example:
+*  track cars, tucks, or buses on a map
+*  track stocks and send notifications.
+*  provide location services
+*  compute gaming stats
+*  collect health information (heart monitoring, breathing, etc)
+*  monitoring traffic conditions
+*  etc.
 
 
 ## Example

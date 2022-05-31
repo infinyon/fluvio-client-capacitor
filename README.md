@@ -62,13 +62,19 @@ The Sample App in the [example directory](./example) to demonstrate Fluvio capat
     fluvio profile export > www/fluvio-profile.json
     ```
 
-4. Build the Sample App
+4. Create topic in fluvio
+
+    ```bash
+    fluvio topic create cap-example
+    ```
+
+5. Build the Sample App
 
     ```bash
     npm install && npm run build
     ```
 
-5. Sync to native projects
+6. Sync to native projects
 
     ```bash
     npx cap sync
@@ -148,4 +154,4 @@ This project is currently under development and we are seeking help from the com
 * [support for consummers](https://github.com/infinyon/fluvio-client-capacitor/issues/1)
 * [support for Android](https://github.com/infinyon/fluvio-client-capacitor/issues/2)
 
-Please join our [Discord](https://discordapp.com/invite/bBG2dTz) channel and join us on this effort.
+Join our community on [Discord](https://discordapp.com/invite/bBG2dTz) and let's build the future of data streaming together.

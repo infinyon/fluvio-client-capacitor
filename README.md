@@ -1,79 +1,119 @@
 <h1 align="center">Fluvio Capacitor Plugin</h1>
 
-This project is a mobile app plugin written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobile devices with Fluvio. Producing and consuming data directly to and from Fluvio lowers latency and reduces the load on other backend services. 
-
-This plugin allows your app to connect directly to a Fluvio cluster without an intermediary backend server. Under the hood, this project uses [fluvio-client-swift](https://github.com/infinyon/fluvio-client-swift/) for iOS.
+This project is a mobile app plugin written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobile devices with Fluvio. Connecting your mobile devices directly to a Fluvio cluster without an intermediary backend server reduces latency and the load on other backend services.
 
 ## What is Fluvio?
 
-[Fluvio](https://www.fluvio.io/) is a high-performance distributed data streaming platform built to make it easy to build and run real-time applications. With Fluvio, you can ingest, transform, and dispatch large volumes of events between from your mobile devices to backend servers. 
+[Fluvio](https://www.fluvio.io/) is an end-to-end distributed data streaming platform that makes it easy to build and run real-time applications. With Fluvio, you can ingest, transform, and dispatch large volumes of events from your mobile devices to backend servers. It connects your devices from edge to core, removing the complexity of building and scaling your middle tier.
 
 ## Who should use this?
 
-Anyone building a native mobile applications with low tolerance for latency. For example:
-*  track cars, tucks, or buses on a map
-*  track stocks and send notifications.
-*  provide location services
+Anyone who is building native mobile applications with a low tolerance for latency. For example:
+*  track cars, trucks, or buses on a map
+*  monitor stocks and send alerts
 *  compute gaming stats
-*  collect health information (heart monitoring, breathing, etc)
+*  collect health monitoring data
 *  monitoring traffic conditions
 *  etc.
 
+## Prerequisites
 
-## Example
+1. Clone this project
 
-Clone this repo and follow the [Readme](example/README.md) in the `example` directory to see it in action.
+    ```bash
+    git clone git@github.com:infinyon/fluvio-client-capacitor.git
+    ```
 
+2. Install Capacitor
 
-## Get started
-
-If you haven't already started building your app with Capacitor, follow the [Capacitor Documentation](https://capacitorjs.com/docs) to create an app.
-
-You will need a Fluvio cluster, you can create one for free on [Infinyon Cloud](https://infinyon.cloud/).
-
-
-## Install
-
-```bash
-npm install --save https://github.com/infinyon/fluvio-client-capacitor/releases/download/v0.0.2/fluvio-client-capacitor.tgz
-npx cap sync
-```
-
-## Configure Fluvio profile
-
-### Obtain Fluvio credentials with Fluvio CLI
-
-#### Using Infinyon Cloud
-
-Once you have an Infinyon Cloud account, you can login with the Fluvio CLI.
-
-```bash
-fluvio cloud login
-```
-
-### Export Fluvio profile
-
-```bash
-fluvio profile export > <path to your web source>/fluvio-profile.json
-```
+    Your computer must have [Capacitor](https://capacitorjs.com/docs) installed with an `IOS runtime`. Checkout the [Capacitor iOS Documentation](https://capacitorjs.com/docs/ios) for additional instructions.
 
 
-## Example Usage
+## Setup Fluvio
 
-```javascript
-import { FluvioClient } from '@fluvio/client-capacitor';
-import fluvioProfile from './fluvio-profile.json';
+1. Install Fluvio client:
+    
+    [Download Fluvio](https://www.fluvio.io/download/) client to your local machine.
 
-const FLUVIO_TOPIC = 'cap-example';
+2. Provision a Fluvio cluster:
 
-async function example() {    
-    let fluvioClient = await FluvioClient.connect(fluvioProfile);
-    await fluvioClient.produce(FLUVIO_TOPIC, "example value");
-}
-```
+    [Infinyon Cloud](https://infinyon.cloud/) - create free account and provision a cluster.
 
 
-## API
+## Run the Example App
+
+The Sample App in the [example directory](./example) to demonstrate Fluvio capatibities.
+
+1. In the terminal, open the example directory
+
+    ```bash
+    cd example
+    ```
+
+2. Use Fluvio CLI to login to Fluvio Cloud
+
+    ```bash
+    fluvio cloud login
+    ```
+
+3. Download your fluvio profile in the `www` directory. This file contains your security profile that allows mobiles devices to connect to InfinyOn cloud.
+
+    ```bash
+    fluvio profile export > www/fluvio-profile.json
+    ```
+
+4. Create topic in fluvio
+
+    ```bash
+    fluvio topic create cap-example
+    ```
+
+5. Build the Sample App
+
+    ```bash
+    npm install && npm run build
+    ```
+
+6. Sync to native projects
+
+    ```bash
+    npx cap sync
+    ```
+
+6. (iOS) Open XCode to deploy to simulator
+
+    ```bash
+    npx cap open ios
+    ```
+
+Congratulations! Your enviornment is up and running. Use the GUI to send some records and read from the consumer in the CLI.
+
+
+
+## Integrate Fluvio into your own Capacitor App
+
+1. Use `npm` to install the Fluvio capacitor client in your own app:
+
+    ```bash
+    npm install --save https://github.com/infinyon/fluvio-client-capacitor/releases/latest/download/fluvio-client-capacitor.tgz
+    ```
+
+2. Sample code to produce records
+
+    ```javascript
+    import { FluvioClient } from '@fluvio/client-capacitor';
+    import fluvioProfile from './fluvio-profile.json';
+
+    const FLUVIO_TOPIC = 'cap-example';
+
+    async function example() {    
+        let fluvioClient = await FluvioClient.connect(fluvioProfile);
+        await fluvioClient.produce(FLUVIO_TOPIC, "example value");
+    }
+    ```
+
+
+## APIs
 
 ### FluvioClient
 
@@ -102,10 +142,16 @@ async function example() {
 - cert: `string`
 - ca_cert: `string`
 
-### Limitations
 
-This project is currently under development and lacks support for the following features:
-* incoming traffic (consumers)
-* Android devices
+## References 
+* [Capacitor Documentation](https://capacitorjs.com/docs)
+* [Fluvio Documentation](https://fluvio.io/docs)
 
-We are seeking help from the community to accelerate development. Please join our [Discord](https://discordapp.com/invite/bBG2dTz) channel and join us on this effort.
+
+## Limitations
+
+This project is currently under development and we are seeking help from the community on the following features:
+* [support for consummers](https://github.com/infinyon/fluvio-client-capacitor/issues/1)
+* [support for Android](https://github.com/infinyon/fluvio-client-capacitor/issues/2)
+
+Join our community on [Discord](https://discordapp.com/invite/bBG2dTz) and let's build the future of data streaming together.

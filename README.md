@@ -144,8 +144,8 @@ Congratulations! Your enviornment is up and running. Use the GUI to send some re
 
 ## Limitations
 
-This project is currently under development and lacks support for the following features:
-* incoming traffic (consumers)
-* Android devices
+This project is currently under development and we are seeking help from the community on the following features:
+* [support for consummers](https://github.com/infinyon/fluvio-client-capacitor/issues/1)
+* [support for Android](https://github.com/infinyon/fluvio-client-capacitor/issues/2)
 
-We are seeking help from the community to accelerate development. Please join our [Discord](https://discordapp.com/invite/bBG2dTz) channel and join us on this effort.
+Please join our [Discord](https://discordapp.com/invite/bBG2dTz) channel and join us on this effort.

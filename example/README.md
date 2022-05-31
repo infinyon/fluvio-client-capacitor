@@ -8,6 +8,13 @@
 npm install
 ```
 
+2. Install Fluvio Capacitor plugin:
+
+```bash 
+npm install --save https://github.com/infinyon/fluvio-client-capacitor/releases/latest/download/fluvio-client-capacitor.tgz
+```
+
+
 ### Obtain Fluvio credentials with Fluvio CLI
 
 #### Using Infinyon Cloud

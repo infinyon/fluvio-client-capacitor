@@ -18,7 +18,7 @@ public class FluvioPlugin: CAPPlugin {
         let domain = tls["domain"]! as! String
         let key = tls["key"]! as! String
         let cert = tls["cert"]! as! String
-        let ca_cert = tls["ca_cert"]! as! String
+        let ca_cert = tls["caCert"]! as! String
         let nextClientId = clients.count
 
         let profile = FluvioProfile(endpoint, domain, key, cert, ca_cert)

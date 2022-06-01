@@ -2,6 +2,10 @@
 
 This project is a mobile app plugin written in HTML/JS/CSS with [Capacitor](https://capacitorjs.com) that shows you how to connect mobile devices with Fluvio. Connecting your mobile devices directly to a Fluvio cluster without an intermediary backend server reduces latency and the load on other backend services.
 
+<p align="center">
+<img width="600" alt="Fluvio-capacitor" src="https://user-images.githubusercontent.com/26554085/171305848-66a246e1-9615-46b1-b55a-b0f1a7eab5cc.png">
+</p>
+
 ## What is Fluvio?
 
 [Fluvio](https://www.fluvio.io/) is an end-to-end distributed data streaming platform that makes it easy to build and run real-time applications. With Fluvio, you can ingest, transform, and dispatch large volumes of events from your mobile devices to backend servers. It connects your devices from edge to core, removing the complexity of building and scaling your middle tier.
@@ -15,8 +19,6 @@ Anyone who is building native mobile applications with a low tolerance for laten
 *  collect health monitoring data
 *  monitoring traffic conditions
 *  etc.
-
-<img width="1204" alt="Fluvio-capacitor" src="https://user-images.githubusercontent.com/26554085/171305848-66a246e1-9615-46b1-b55a-b0f1a7eab5cc.png">
 
 ## Prerequisites
 

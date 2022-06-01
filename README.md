@@ -16,6 +16,8 @@ Anyone who is building native mobile applications with a low tolerance for laten
 *  monitoring traffic conditions
 *  etc.
 
+<img width="1204" alt="Fluvio-capacitor" src="https://user-images.githubusercontent.com/26554085/171305848-66a246e1-9615-46b1-b55a-b0f1a7eab5cc.png">
+
 ## Prerequisites
 
 1. Clone this project

@@ -155,7 +155,7 @@ Congratulations! Your enviornment is up and running. Use the GUI to send some re
 ## Limitations
 
 This project is currently under development and we are seeking help from the community on the following features:
-* [support for consummers](https://github.com/infinyon/fluvio-client-capacitor/issues/1)
+* [support for consumers](https://github.com/infinyon/fluvio-client-capacitor/issues/1)
 * [support for Android](https://github.com/infinyon/fluvio-client-capacitor/issues/2)
 
 Join our community on [Discord](https://discordapp.com/invite/bBG2dTz) and let's build the future of data streaming together.
